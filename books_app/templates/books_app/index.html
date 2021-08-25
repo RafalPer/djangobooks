@@ -1,0 +1,15 @@
+{% extends 'books_app/base.html' %}
+
+{% block content %}
+        {% for books in book %}
+            <h1>{{ books.title }}</h1>
+                <h3>Author: {{ books.author}}</h3>
+                <h3>Date Published: {{ books.date_published }}</h3>
+                <h3>ISBN: {{ books.isbn }}</h3>
+                <h3>Pages: {{ books.number_of_pages }}</h3>
+                <h3><a href={{ books.link_to_cover }}>Link to cover</a><h3/>
+                <h3>Language of Publication: {{ books.language_of_publication }}</h3>
+                <h4><a href={% url 'edit' isbn=books.isbn %}>Edit</a><h4/>
+                <br></br>
+        {% endfor %}
+{% endblock %}

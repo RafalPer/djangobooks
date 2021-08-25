@@ -1,0 +1,8 @@
+{% include 'books_app/index.html' %}
+
+<form method='POST'>
+    {% csrf_token %}
+    From: <input type='date' name='fromdate'/>
+    To: <input type='date' name='todate'/>
+    <input type='submit' value='Search'/>
+</form>
